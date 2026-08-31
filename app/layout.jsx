@@ -1,8 +1,6 @@
-import './globals.css';
-
 export const metadata = {
-  title: 'مساعد AI العراقي 🇮🇶',
-  description: 'مساعد الذكاء الاصطناعي العراقي للدراسة والعمل والحياة اليومية',
+  title: "مساعد AI العراقي 🇮🇶",
+  description: "مساعدك الذكي للدراسة والحياة اليومية"
 };
 
 export default function RootLayout({ children }) {
