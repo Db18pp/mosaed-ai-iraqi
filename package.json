@@ -11,6 +11,11 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "@supabase/supabase-js": "latest"
+    "@supabase/supabase-js": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/postcss": "latest"
+  },
+  "devDependencies": {
+    "postcss": "latest"
   }
 }
