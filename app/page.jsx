@@ -1,123 +1,119 @@
-'use client';
+'"use client";
 
-import { useState } from 'react';
-
-const sections = [
-  ['🤖', 'مساعد AI', 'اسأل أي سؤال واحصل على جواب بسيط باللهجة العراقية.'],
-  ['📚', 'السادس الإعدادي', 'شرح، تلخيص، حل أسئلة ومساعدة دراسية.'],
-  ['📝', 'الأسئلة الوزارية', 'تدرب على الأسئلة حسب المادة والسنة والدور.'],
-  ['🧠', 'اختبرني', 'خلّي الذكاء الاصطناعي ينشئ لك اختبار ويحسب درجتك.'],
-  ['✍️', 'الكتابة', 'بحوث، تقارير، تلخيص وإعادة صياغة.'],
-  ['🌐', 'الترجمة', 'ترجمة سهلة وسريعة للنصوص.'],
-  ['💡', 'أفكار ومشاريع', 'ساعدك بأفكار للمشاريع والدراسة والعمل.'],
-  ['🎙️', 'المساعد الصوتي', 'تحدث مع مساعدك بطريقة طبيعية.']
-];
+import { useState } from "react";
 
 export default function Home() {
-  const [selected, setSelected] = useState(null);
+  const [message, setMessage] = useState("");
 
   return (
-    <main dir="rtl" className="min-h-screen bg-[#090806] text-[#f5e8c8]">
-      <header className="border-b border-[#c99a35]/20 bg-[#090806]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#d4aa4c] text-2xl">
-              🇮🇶
-            </div>
-
-            <div>
-              <h1 className="font-bold text-white">مساعد AI العراقي</h1>
-              <p className="text-xs text-[#bda66e]">
-                ذكاء يفهمك باللهجة العراقية
-              </p>
-            </div>
+    <main
+      dir="rtl"
+      style={{
+        minHeight: "100vh",
+        background: "#090806",
+        color: "#f5e8c8",
+        fontFamily: "Arial, sans-serif",
+        padding: "30px 20px"
+      }}
+    >
+      <div style={{ maxWidth: 1100, margin: "auto" }}>
+        <header
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "20px 0",
+            borderBottom: "1px solid #3d3018"
+          }}
+        >
+          <div>
+            <h1 style={{ margin: 0, color: "#d8b45a" }}>
+              🇮🇶 مساعد AI العراقي
+            </h1>
+            <p style={{ color: "#aaa08d" }}>
+              ذكاء يفهمك باللهجة العراقية
+            </p>
           </div>
 
           <button
-            onClick={() => setSelected('مساعد AI')}
-            className="rounded-xl bg-[#d4aa4c] px-5 py-2 font-bold text-black"
+            onClick={() => setMessage("هلا بيك! شلون أساعدك؟")}
+            style={{
+              background: "#d8b45a",
+              color: "#090806",
+              border: 0,
+              borderRadius: 12,
+              padding: "12px 20px",
+              fontWeight: "bold"
+            }}
           >
             ابدأ الآن
           </button>
-        </div>
-      </header>
+        </header>
 
-      <section className="mx-auto max-w-5xl px-5 pb-16 pt-20 text-center">
-        <div className="mb-6 inline-block rounded-full border border-[#c99a35]/30 px-4 py-2 text-sm text-[#d4aa4c]">
-          ✨ مساعدك الذكي العراقي
-        </div>
+        <section style={{ textAlign: "center", padding: "80px 0 50px" }}>
+          <h2 style={{ fontSize: 48, color: "#fff" }}>
+            الذكاء الاصطناعي
+            <br />
+            <span style={{ color: "#d8b45a" }}>
+              بطابع عراقي 🇮🇶
+            </span>
+          </h2>
 
-        <h2 className="text-4xl font-black leading-tight text-white sm:text-6xl">
-          الذكاء الاصطناعي
-          <br />
-          <span className="text-[#d4aa4c]">بطابع عراقي 🇮🇶</span>
-        </h2>
+          <p style={{ color: "#aaa08d", fontSize: 18 }}>
+            ادرس، اسأل، اختبر نفسك وخلي مساعدك الذكي وياك بكل خطوة.
+          </p>
+        </section>
 
-        <p className="mx-auto mt-6 max-w-2xl leading-8 text-[#aaa08d]">
-          ادرس، اسأل، اختبر نفسك، اكتب، ترجم وخلي مساعدك الذكي وياك بكل خطوة.
-        </p>
-
-        <button
-          onClick={() => setSelected('مساعد AI')}
-          className="mt-8 rounded-2xl bg-gradient-to-r from-[#d9b45c] to-[#9b7121] px-8 py-4 font-bold text-black"
+        <section
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 18
+          }}
         >
-          ابدأ المساعدة ✨
-        </button>
-      </section>
-
-      <section className="mx-auto grid max-w-6xl gap-4 px-5 pb-20 sm:grid-cols-2 lg:grid-cols-4">
-        {sections.map(([icon, title, description]) => (
-          <button
-            key={title}
-            onClick={() => setSelected(title)}
-            className="rounded-3xl border border-[#c99a35]/20 bg-[#11100d] p-6 text-right transition hover:-translate-y-1 hover:border-[#d4aa4c]/60"
-          >
-            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#d4aa4c]/10 text-2xl">
-              {icon}
-            </div>
-
-            <h3 className="text-lg font-bold text-white">{title}</h3>
-
-            <p className="mt-2 text-sm leading-7 text-[#a9a08d]">
-              {description}
-            </p>
-
-            <div className="mt-5 text-sm font-bold text-[#d4aa4c]">
-              فتح القسم ←
-            </div>
-          </button>
-        ))}
-      </section>
-
-      {selected && (
-        <div
-          onClick={() => setSelected(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-5"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-md rounded-3xl border border-[#d4aa4c]/30 bg-[#11100d] p-7 text-center"
-          >
-            <div className="mb-4 text-4xl">🤖</div>
-
-            <h3 className="text-2xl font-black text-white">
-              {selected}
-            </h3>
-
-            <p className="mt-4 leading-7 text-[#aaa08d]">
-              القسم جاهز بالواجهة، والخطوة التالية نربطه بالذكاء الاصطناعي
-              والبيانات الحقيقية.
-            </p>
-
+          {[
+            ["🤖", "مساعد AI"],
+            ["📚", "السادس الإعدادي"],
+            ["📝", "الأسئلة الوزارية"],
+            ["🧠", "اختبرني"]
+          ].map(([icon, title]) => (
             <button
-              onClick={() => setSelected(null)}
-              className="mt-6 w-full rounded-2xl bg-[#d4aa4c] py-3 font-bold text-black"
+              key={title}
+              onClick={() => setMessage(`اخترت: ${title}`)}
+              style={{
+                textAlign: "right",
+                background: "#12100c",
+                color: "#fff",
+                border: "1px solid #3d3018",
+                borderRadius: 20,
+                padding: 25,
+                minHeight: 170
+              }}
             >
-              رجوع
+              <div style={{ fontSize: 32 }}>{icon}</div>
+              <h3>{title}</h3>
+              <p style={{ color: "#aaa08d" }}>
+                اضغط للدخول إلى القسم
+              </p>
             </button>
+          ))}
+        </section>
+
+        {message && (
+          <div
+            style={{
+              marginTop: 30,
+              padding: 20,
+              background: "#17130c",
+              border: "1px solid #d8b45a",
+              borderRadius: 16,
+              textAlign: "center"
+            }}
+          >
+            {message}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </main>
   );
-}
+    }
